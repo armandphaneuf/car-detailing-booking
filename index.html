@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Shine — Car Detailing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="nav">
+      <span class="logo">Premium Shine</span>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#book">Book Now</a>
+        <a href="#appointments">My Appointments</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1>Showroom Shine, Delivered.</h1>
+      <p>Professional mobile detailing that comes to you. Book your appointment in under a minute.</p>
+      <a href="#book" class="btn btn-primary">Book an Appointment</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="section">
+      <h2>Our Services</h2>
+      <div class="cards" id="service-cards"></div>
+    </section>
+
+    <section id="book" class="section section-alt">
+      <h2>Book an Appointment</h2>
+      <form id="booking-form" class="booking-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vehicle">Vehicle</label>
+            <input type="text" id="vehicle" name="vehicle" required placeholder="2021 Honda Civic, Black">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Package</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Choose a package</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <select id="time" name="time" required>
+              <option value="" disabled selected>Choose a time</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Anything we should know? Pet hair, heavy stains, gate codes..."></textarea>
+        </div>
+
+        <p class="form-error" id="form-error" hidden></p>
+
+        <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
+      </form>
+    </section>
+
+    <section id="appointments" class="section">
+      <h2>My Appointments</h2>
+      <p class="muted">Bookings you make are saved on this device. Cancel any time.</p>
+      <div id="appointments-list" class="appointments-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Premium Shine Detailing · Mobile Service · Mon–Sat, 8am–6pm</p>
+  </footer>
+
+  <div class="modal" id="confirm-modal" hidden>
+    <div class="modal-card">
+      <h3>Almost Booked!</h3>
+      <p id="confirm-details"></p>
+      <p class="muted modal-note">Your email app is opening with everything filled in — just tap send to get it to us. If it didn't open, use the button below.</p>
+      <a class="btn btn-primary btn-full" id="confirm-mailto" href="#">Open Email App</a>
+      <button class="btn btn-secondary btn-full" id="confirm-close">Done</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
